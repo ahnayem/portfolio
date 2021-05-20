@@ -1,0 +1,170 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>{% block title %} {% endblock title %}</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'img/favicon.png' %}" rel="icon">
+  <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/select2/css/select2.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/selectlte.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/icheck-bootstrap/icheck-bootstrap.min.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/azzara.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  <link href="{% static 'css/card.css' %}" rel="stylesheet">
+
+  <style>
+    .navbar .dropdown ul{
+      left: -100px;
+    }
+    .navbar a{
+      color: black!important;
+    }
+  </style>
+  
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="{% url 'index' %}"><strong>BitsFolio</strong></a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="{% static 'index.html" class="logo"><img src="{% static 'img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto" href="{% url 'index' %}">Home</a></li>
+          <li><a class="nav-link scrollto" href="#">Theme</a></li>          
+          
+          {% if request.user.username %}
+          <li class="nav-item dropdown hidden-caret">
+            <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
+              <div class="avatar-sm">
+                <img src="{{data.image.url}}" alt="user image" class="avatar-img rounded-circle">&nbsp <strong  style="color: #0dcaf0; font-size: 20px; font-weight: bolder;">{{request.user}} </strong><i style="font-size: 16px;margin-left: 0;" class="fas fa-angle-down"></i>
+              </div>
+            </a>
+            <ul class="dropdown-menu dropdown-user animated">
+              <li>
+                <div class="user-box">
+                  <div class="avatar-lg"><img src="{{data.image.url}}" alt="user image" class="avatar-img rounded"></div>
+                  <div class="u-text">
+                    <strong>
+                    {% if data.name %}
+                    {{data.name}}
+                    {% else %}
+                      {{request.user}}
+                    {% endif %}
+                      </strong>
+                    <p class="text-muted">
+                      {% if data.email %}
+                      {{data.email}}
+                      {% else %}
+                        {{request.user.email}}
+                      {% endif %}
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'portfolio' %}">My Profile</a>
+                <a class="dropdown-item" href="{% url 'portfolio-edit' %}">Update Portfolio</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'change-pass' %}">Change Password</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+              </li>
+            </ul>
+          </li>
+          {% else %}
+          <li><a class="getstarted scrollto" href="{% url 'login' %}" style="color: white!important;">Login</a></li>
+          <li><a class="getstarted scrollto" href="{% url 'signup' %}" style="color: white!important;">Signup</a></li>
+          {% endif %}
+            
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  {% block content %} {% endblock content %}
+      
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>BitsFolio</span></strong>. All Rights Reserved
+        </div>
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/select2/js/select2.full.min.js' %}"></script>
+  <script src="{% static 'vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'vendor/purecounter/purecounter.js' %}"></script>
+  <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'js/main.js' %}"></script>
+
+  <script>
+    $(function () {
+      //Initialize Select2 Elements
+      $('.select2').select2({
+        closeOnSelect: false
+      });
+
+      //Initialize Select2 Elements
+      $('.select2bs4').select2()
+
+    })
+  </script>
+
+</body>
+
+</html>

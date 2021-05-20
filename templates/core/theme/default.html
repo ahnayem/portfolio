@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}  
+    <!--meta tags-->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="Bitsfolio is a Personal Portfolio Template">
+    <meta name="keywords" content="Bistfolio, onepage, developer, resume, cv, personal, portfolio, personal resume, clean, modern">
+    <meta name="author" content="Bitsfolio">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Template name-->
+    <title>Bitsfolio - Personal Portfolio</title>
+    
+    
+    
+    
+    <meta name="theme-color" content="#ffffff">
+    <!--Font Awesome css-->
+    <link rel="stylesheet" href="{% static 'theme/default/css/font-awesome.min.css' %}">
+    <!--Bootstrap css-->
+    <link rel="stylesheet" href="{% static 'theme/default/css/bootstrap.min.css' %}">
+    <!--Animated headline css-->
+    <link rel="stylesheet" href="{% static 'theme/default/css/jquery.animatedheadline.css' %}">
+    <!--Owl carousel css-->
+    <link rel="stylesheet" href="{% static 'theme/default/css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'theme/default/css/owl.theme.default.css' %}">
+    <!--Magnific popup css-->
+    <link rel="stylesheet" href="{% static 'theme/default/css/magnific-popup.css' %}">
+    <!--line icon css-->
+    <link rel="stylesheet" href="{% static 'theme/default/css/line-icons.min.css' %}">
+    <!--Theme css-->
+    <link rel="stylesheet" href="{% static 'theme/default/css/style.css' %}">
+    <!--Responsive css-->
+    <link rel="stylesheet" href="{% static 'theme/default/css/responsive.css' %}">
+    <!--iconify js-->
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <style type="text/css">
+        /* centered columns styles */
+        .row-centered {
+            text-align:center;
+        }
+        .col-centered {
+            display:inline-block;
+            float:none;
+            /* reset the text-align */
+            text-align:left;
+            /* inline-block space fix */
+            text-align: center;
+        }
+        .iconify { width: 25px; height: 25px; }
+    </style>
+</head>
+<body>
+<!--Preloader starts-->
+<div class="loader_bg"><div class="loader"></div></div>
+<!--Preloader ends-->
+<!--Navigation area starts-->
+<header class="nav-area navbar-fixed-top">
+    <div class="container">
+        <div class="row">
+            <!--main menu starts-->
+            <div class="col-md-12">
+                <div class="main-menu">
+                    <div class="navbar navbar-cus">
+                        <div class="navbar-header">
+                            <a href="{% url 'index' %}" class="navbar-brand"><span class="logo"><span>Bits</span>folio</span></a> <!--change logo name-->
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="navbar-collapse collapse">
+                            <nav>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li class="active"><a class="smooth-menu" href="#home">Home</a></li>
+                                    <li><a class="smooth-menu" href="#about">About</a></li>
+                                    <li><a class="smooth-menu" href="#resume">Resume</a></li>
+                                    <li><a class="smooth-menu" href="#skills-bd">Skill</a></li>
+                                    <li><a class="smooth-menu" href="#contact">Contact</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--main menu ends-->
+        </div>
+    </div>
+</header>
+<!--Navigation area ends-->
+<!--Banner area starts-->
+<div class="banner-area" id="home" >
+    <div id="particles-js"></div>
+    <div class="banner-table">
+        <div class="banner-table-cell">
+            <div class="welcome-text">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <section class="intro animate-scale">
+                                <h3>Hello..</h3>
+                                <h3 style="color: #fff">I'm <span style="color: #45d5f9">{{data.name}}</span></h3>
+                                <h4 class="ah-headline" style="color: #fff">
+                                    <span class="ah-words-wrapper">
+                                        <b class="is-visible">{{data.title}}</b>
+                                    </span>
+                                </h4>
+                                <div class="social-icon">
+                                    <ul>
+                                        <li><a href="{{data.facebook}}" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="{{data.twitter}}" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="{{data.linkedin}}" target="_blank" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                                        <li><a href="{{data.github}}" target="_blank" title="Github"><i class="fa fa-github"></i></a></li>
+                                    </ul>
+                                </div>
+                            </section>
+                            <div class="clearfix"></div>
+                            <a class="mouse-scroll hidden-xs dadada" href="#about">
+                                <span class="mouse">
+                                    <span class="mouse-movement"></span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Banner area ends-->
+<!--About area starts-->
+<div class="about-area section-padding" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-12">
+                <div class="stack">
+                    <img src="{{data.image.url}}" alt="about image"> <!--edit image-->
+                </div>
+            </div>
+            <div class="col-md-7 col-md-offset-1 col-sm-12">
+                <div class="about-right">
+                    <h2>{{data.title}}</h2>
+                    <p>I am <span>{{data.name}}</span>. {{data.about}}
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <ul class="about-list">
+                                <li> <span class="title">Name</span> <span class="value">{{data.name}}</span> </li>
+                                <li> <span class="title">Phone</span> <span class="value">{{data.phone}}</span> </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <ul class="about-list">
+                                <li> <span class="title">Email</span> <span class="value">{{data.email}}</span> </li>
+                                <li> <span class="title">Address</span> <span class="value">{{data.city}}, {{data.country}}</span> </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--About area ends-->
+<!--Experience area starts-->
+<div id="resume" class="experience-area section-padding">
+    {% if data.company1 or data.company2 %}
+    <div class="container">
+        <div class="row">
+            <div class="section-title">
+                <h2>My <span>Experience</span></h2>
+            </div>
+        </div>
+        <div class="row">
+            {% if data.company1 %}
+            <div class="col-md-6">
+                <ul class="resumes">
+                    <li class="resume-item expr">
+                        <h3>{{data.company1}}</h3>
+                        <h4>{{data.designation1}}</h4>
+                        <h5>{{data.period1}}</h5>
+                    </li>
+                </ul>
+            </div>
+            {% endif %}
+            {% if data.company2 %}
+            <div class="col-md-6">
+                <ul class="resumes">
+                    <li class="resume-item expr">
+                        <h3>{{data.company2}}</h3>
+                        <h4>{{data.designation2}}</h4>
+                        <h5>{{data.period2}}</h5>
+                    </li>
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+        
+    <div class="container section-padding">
+        <div class="row">
+            <div class="section-title">
+                <h2>My <span>Education</span></h2>
+            </div>
+        </div>
+        <div class="row">
+            {% if data.uniM %}
+            <div class="col-md-6">
+                <ul class="resumes">
+                    <li class="resume-item expr">
+                        <h3>Masters / M.Sc</h3>
+                        <h4>{{data.uniM}}</h4>
+                        <h5>{{data.uniM_subject}}</h5>
+                        <h5>{{data.uniM_passing}}</h5>
+                        <h5> 
+                        {% if data.uniM_result %}
+                        Result: {{data.uniM_result}}
+                        {% else %}
+                            Studying</h5>
+                        {% endif %}
+                    </li>
+                </ul>
+            </div>
+            {% endif %}
+
+            <div class="col-md-6">
+                <ul class="resumes">
+                    <li class="resume-item expr">
+                        <h3>Honors / B.Sc</h3>
+                        <h4>{{data.uni}}</h4>
+                        <h5>{{data.uni_subject}}</h5>
+                        <h5>{{data.uni_passing}}</h5>
+                        <h5> 
+                        {% if data.uni_result %}
+                        Result: {{data.uni_result}}
+                        {% else %}
+                        Studying</h5>
+                        {% endif %}
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul class="resumes">
+                    <li class="resume-item expr">
+                        <h3>HSC</h3>
+                        <h4>{{data.clg}}</h4>
+                        <h5>{{data.clg_group}}</h5>
+                        <h5>{{data.clg_passing}}</h5>
+                        <h5>Result: {{data.clg_result}}</h5>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Experience area ends-->
+<!--Skills area starts-->
+<div id="skills-bd" class="skills-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="section-title">
+                <h2>My <span>Skills</span></h2>
+            </div>
+        </div>
+        <div class="row row-centered">
+            {% for sk in skdata %}
+            {% if sk.name in data.skills %}
+            <div class="col-md-3 col-centered" style="padding-bottom: 15px;">
+                <div class="skills__data">
+                    <div class="skills__names">
+                        <i class="iconify" data-icon="{{sk.skicon}}" data-inline="false"></i>&nbsp;
+                        <span class="skills__name">&nbsp;<STRONG style="font-size: small;">{{sk.name}}</STRONG></span>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!--Skills area ends-->
+<!--Contact Area Starts-->
+<div id="contact" class="contact-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="section-title">
+                <h2>My <span>Contact</span></h2>
+            </div>
+        </div>
+        <div class="row"  style="text-align: center;">
+            <div class="col-md-4">
+                <div class="right-contact">
+                    <div class="right-contact-text">
+                        <i class="fa fa-map-marker"></i>
+                        <h2>Address / Street</h2>
+                        <p>{{data.city}}, {{data.country}}</p> <!--edit here-->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="right-contact">
+                    <div class="right-contact-text">
+                        <i class="fa fa-phone"></i>
+                        <h2>Contact Number</h2>
+                        <p>{{data.phone}}</p> <!--edit here-->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="right-contact">
+                    <div class="right-contact-text">
+                        <i class="fa fa-envelope"></i>
+                        <h2>Email Address</h2>
+                        <p>{{data.email}}</p> <!--edit here-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Contact Area Ends-->
+<!--Footer Area Starts-->
+<div class="footer-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                <p style="margin-bottom: 0;">&copy; All Right Reserved By <a href="#" target="_blank">BitsFolio</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Footer Area Ends-->
+<!--Latest version JQuery-->
+<script src="{% static 'theme/default/js/jquery-3.2.1.min.js' %}"></script>
+<!--Bootstrap js-->
+<script src="{% static 'theme/default/js/bootstrap.min.js' %}"></script>
+<!--Animated headline js-->
+<script src="{% static 'theme/default/js/jquery.animatedheadline.js' %}"></script>
+<!--Magnific popup js-->
+<script src="{% static 'theme/default/js/jquery.magnific-popup.js' %}"></script>
+<script src="{% static 'theme/default/js/custom.js' %}"></script>
+<!--Validator js-->
+<script src="{% static 'theme/default/js/jquery.waypoints.js' %}"></script>
+<!--Counter up js-->
+<script src="{% static 'theme/default/js/jquery.counterup.min.js' %}"></script>
+<!--imagesloaded js-->
+<script src="{% static 'theme/default/js/imagesloaded.min.js' %}"></script>
+<!--isotope js-->
+<script src="{% static 'theme/default/js/isotope.pkgd.min.js' %}"></script>
+<!--Owl Carousel js-->
+<script src="{% static 'theme/default/js/owl.carousel.js' %}"></script>
+<!--Validator js-->
+<script src="{% static 'theme/default/js/validator.js' %}"></script>
+<!--Contact js-->
+<script src="{% static 'theme/default/js/contact.js' %}"></script>
+<!--particles js-->
+<script src="{% static 'theme/default/js/particles.js' %}"></script>
+<script src="{% static 'theme/default/js/app.js' %}"></script>
+<!--Main js-->
+<script src="{% static 'theme/default/js/main.js' %}"></script>
+</body>
+</html>

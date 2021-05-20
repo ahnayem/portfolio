@@ -1,0 +1,259 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block title %} Bitslab - {{title}} {% endblock title %}
+
+
+{% block content %}
+<main id="main" style="padding-top: 15px;">
+
+  <!-- ======= Contact Section ======= -->
+  <section id="contact" class="contact section-bg">
+    <div class="container" data-aos="fade-up">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+        </symbol>
+        <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+        </symbol>
+        <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+        </symbol>
+      </svg>
+      
+      {% for message in messages %}
+      {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+      <div class="alert alert-success d-flex align-items-center alert-dismissible" role="alert">
+        <svg class="bi flex-shrink-0 me-2" width="24" height="24"><use xlink:href="#check-circle-fill"/></svg>
+        <strong>Great! </strong>&nbsp; {{message}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {% elif message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+      <div class="alert alert-danger d-flex align-items-center alert-dismissible" role="alert">
+        <svg class="bi flex-shrink-0 me-2" width="24" height="24"><use xlink:href="#exclamation-triangle-fill"/></svg>
+        <strong>Ooops! </strong>&nbsp; {{message}} 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {% endif %}
+      {% endfor %}
+
+      <div class="section-title">
+        <h2>Information</h2>
+        <p>Please fill up the form to complete your portfolio. <br><strong> <em>The fields contain (*) sign must be filled up.</em></strong></p>
+      </div>
+
+      <div class="row mt-3">
+
+        <div class="col-lg-12 mt-5 mt-lg-0">
+
+          <form action="" method="POST" enctype="multipart/form-data" role="form" class="php-email-form">
+            {% csrf_token %}
+            <div class="row section-bg">
+              <div class="col-md-12 form-group mt-4">
+                  <h6 style="color: cornflowerblue;">Personal information*</h6>
+              </div>
+              <div class="col-md-6 form-group">
+                  <label for="name">Full Name*</label>
+                  {% render_field form.name id="name" class="form-control" placeholder="Write your name.."  %}
+                  <div class="validate"></div>
+              </div>
+            
+              <div class="form-group col-md-6">
+                  <label for="title">Proffesional Title (optional)</label>
+                  {% render_field form.title id="title" class="form-control" placeholder="e.g: Programmer, UI/UX Designer, Photographer.."  %}
+                  <div class="validate"></div>
+              </div>
+            </div>
+            <div class="form-group section-bg">
+                <label for="about">About Yourself*</label>
+                {% render_field form.about id="about" class="form-control" rows="5" placeholder="Write about yourself within 500 charecters.."  %}
+                <div class="validate"></div>
+            </div>
+            <div class="row section-bg">
+              <div class="form-group col-md-6">
+                  <label for="phone">Phone No.*</label>
+                  {% render_field form.phone id="phone" class="form-control" placeholder="Write your phone number.."  %}
+                  <div class="validate"></div>
+              </div>
+              <div class="form-group col-md-6">
+                  <label for="email">Email*</label>
+                  {% render_field form.email id="email" class="form-control" placeholder="Write your email address.."  %}
+                  <div class="validate"></div>
+              </div>
+              <div class="form-group col-md-6">
+                  <label for="city">City*</label>
+                  {% render_field form.city id="city" class="form-control" placeholder="Write your current city.."  %}
+                  <div class="validate"></div>
+              </div>
+              <div class="form-group col-md-6">
+                  <label for="country">Country*</label>
+                  {% render_field form.country id="country" class="form-control" placeholder="Your country name.."  %}
+                  <div class="validate"></div>
+              </div>
+              <div class="form-group col-md-6">
+                  <label for="facebook">Facebook Profile*</label>
+                  {% render_field form.facebook id="facebook" class="form-control" placeholder="Your facebook profile link.."  %}
+                  <div class="validate"></div>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="twitter">Twitter Profile (optional)</label>
+                {% render_field form.twitter id="twitter" class="form-control" placeholder="Your twitter profile link.."  %}
+                <div class="validate"></div>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="linkedin">Linkedin Profile (optional)</label>
+                {% render_field form.linkedin id="linkedin" class="form-control" placeholder="Your linkedin profile link.."  %}
+                <div class="validate"></div>
+              </div>
+              <div class="form-group col-md-6">
+                  <label for="github">Github Profile (optional)</label>
+                  {% render_field form.github id="github" class="form-control" placeholder="Your github profile link.."  %}
+                  <div class="validate"></div>
+              </div>
+            </div>
+
+            <div class="row section-bg">
+              <label for="universityM" style="color: #5187ec;"><br><br>Education (Masters / M.Sc)*</label>
+              <div class="col-md-6 form-group">
+                {% render_field form.uniM id="universityM" class="form-control" placeholder="Your university/College name.."  %}
+                <div class="validate"></div>
+              </div>
+              <div class="col-md-6 form-group">
+                {% render_field form.uniM_subject class="form-control" placeholder="Your subject name.."  %}
+                <div class="validate"></div>
+              </div>
+              <div class="col-md-6 form-group">
+                {% render_field form.uniM_result class="form-control" placeholder="Your result.. (keep blank if studying)"  %}
+                <div class="validate"></div>
+              </div>
+              <div class="col-md-6 form-group">
+                {% render_field form.uniM_passing class="input form-control" placeholder="Passing year.. (keep blank if studying)"  %}
+                <div class="validate"></div>
+              </div>
+            </div>
+
+            <div class="row section-bg">
+              <label for="university" style="color: #5187ec;"><br><br>Education (Honors / B.Sc)*</label>
+              <div class="col-md-6 form-group">
+                {% render_field form.uni id="university" class="form-control" placeholder="Your university/College name.."  %}
+                <div class="validate"></div>
+              </div>
+              <div class="col-md-6 form-group">
+                {% render_field form.uni_subject class="form-control" placeholder="Your subject name.."  %}
+                <div class="validate"></div>
+              </div>
+              <div class="col-md-6 form-group">
+                {% render_field form.uni_result class="form-control" placeholder="Your result.. (keep blank if studying)"  %}
+                <div class="validate"></div>
+              </div>
+              <div class="col-md-6 form-group">
+                {% render_field form.uni_passing class="input form-control" placeholder="Passing year.. (keep blank if studying)"  %}
+                <div class="validate"></div>
+              </div>
+            </div>
+
+            <div class="row section-bg">
+              <label for="college" style="color: #5187ec;"><br><br>Education (HSC)*</label>
+              <div class="col-md-6 form-group">
+                {% render_field form.clg id="college" class="form-control" placeholder="Your College name.."  %}
+                <div class="validate"></div>
+              </div>
+              <div class="col-md-6 form-group">
+                {% render_field form.clg_group class="form-control" placeholder="Your Group name.."  %}
+                <div class="validate"></div>
+              </div>
+              <div class="col-md-6 form-group">
+                {% render_field form.clg_result class="form-control" placeholder="Your result.."  %}
+                <div class="validate"></div>
+              </div>
+              <div class="col-md-6 form-group">
+                {% render_field form.clg_passing class="form-control" placeholder="Passing year.."  %}
+                <div class="validate"></div>
+              </div>
+            </div>
+            <div class="form-group section-bg">
+              <br><br>
+              <label for="skill" style="color: #5187ec;"> Your Skills*</label>
+              <div class="select2-purple">
+                <select class="select2" style="width:100%; height: 26px !important;" name="skills" id="skill" multiple="multiple"  data-placeholder="Select your skills" data-dropdown-css-class="select2-purple">
+                  {% for sk in skdata %}
+                  <option value="{{sk.name}}" 
+                    {% if sk.name in user.skills  %}
+                      selected
+                    {% endif %}
+                    >{{sk.name}}</option>
+                  {% endfor %}
+                </select>
+              </div>
+            </div>
+
+            <div class="row section-bg">
+              <label for="job1" style="color: #5187ec;"><br><br>Experience 1 (optional)</label>
+              <div class="col-md-6 form-group">
+                {% render_field form.company1 id="job1" class="form-control" placeholder="Company/Institute name.."  %}
+                <div class="validate"></div>
+              </div>
+              <div class="col-md-6 form-group">
+                {% render_field form.designation1 class="form-control" placeholder="Your designation.."  %}
+                <div class="validate"></div>
+              </div>
+              <div class="col-md-6 form-group">
+                {% render_field form.period1 class="form-control" placeholder="Service period.. e.g: 2018-current"  %}
+                <div class="validate"></div>
+              </div>
+            </div>
+
+            <div class="row section-bg">
+              <label for="job2" style="color: #5187ec;"><br><br>Experience 2 (optional)</label>
+              <div class="col-md-6 form-group">
+                {% render_field form.company2 id="job2" class="form-control" placeholder="Company/Institute name.."  %}
+                <div class="validate"></div>
+              </div>
+              <div class="col-md-6 form-group">
+                {% render_field form.designation2 class="form-control" placeholder="Your designation.."  %}
+                <div class="validate"></div>
+              </div>
+              <div class="col-md-6 form-group">
+                {% render_field form.period2 class="form-control" placeholder="Service period.. e.g: 2018-current"  %}
+                <div class="validate"></div><br><br><br>
+              </div>
+            </div>
+
+            <div class="row section-bg">
+              <div class="col-md-6 form-group">
+                <label for="image" >Upload your image.*</label><br>
+                {% render_field form.image id="image"  class="form-control" style="padding-top: 6px; height: 35px;" %}
+                <div class="validate"></div>
+              </div>
+              <div class="col-md-6 form-group">
+                <label for="theme">Select Theme</label>
+                <select class="form-control select2bs4" id="theme" name="theme" style="width: 100%;">
+                  {% for th in themedata %}
+                  <option value="{{th.name}}" 
+                    {% if th.name in user.theme %}
+                      selected
+                    {% endif %}
+                    >{{th.name}}</option>
+                  {% endfor %}
+                </select>
+                <div class="validate"></div><br><br>
+              </div>
+            </div>
+              
+            <div class="text-center section-bg"><button type="submit">Update</button></div>
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+  <!-- End Contact Section -->
+
+</main><!-- End #main -->
+{% endblock content %}
+  

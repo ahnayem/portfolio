@@ -1,0 +1,690 @@
+.b, .strong, b, strong {
+  font-weight: 700
+}
+.main-header {
+  background: #fff;
+  min-height: 55px;
+  width: 100%;
+  position: fixed;
+  z-index: 1001
+}
+
+.main-header .logo-header {
+  float: left;
+  width: 240px;
+  height: 57px;
+  line-height: 55px;
+  color: #333;
+  z-index: 1001;
+  font-size: 17px;
+  font-weight: 400;
+  padding-left: 25px;
+  padding-right: 25px;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: all .3s
+}
+
+.main-header .logo-header .big-logo {
+  margin-right: 8px
+}
+
+.main-header .logo-header .big-logo:hover {
+  text-decoration: none
+}
+
+.main-header .logo-header .big-logo .logo-img {
+  width: 35px;
+  height: 35px
+}
+
+.main-header .logo-header .logo {
+  color: #575962;
+  opacity: 1;
+  position: relative;
+  height: 100%
+}
+
+.main-header .logo-header .logo:hover {
+  text-decoration: none
+}
+
+.main-header .logo-header .logo .navbar-brand {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-right: 0
+}
+
+.main-header .logo-header .navbar-minimize {
+  position: absolute;
+  top: 0;
+  right: 18px;
+  z-index: 5
+}
+
+.main-header .logo-header .navbar-toggler {
+  padding-left: 0;
+  padding-right: 0;
+  opacity: 0;
+  display: none
+}
+
+.main-header .logo-header .navbar-toggler .navbar-toggler-icon {
+  height: 1em;
+  width: 1em;
+  color: #545454;
+  font-size: 22px
+}
+
+.main-header .logo-header .more {
+  background: 0 0;
+  border: 0;
+  font-size: 22px;
+  padding: 0;
+  opacity: 0;
+  width: 0;
+  display: none
+}
+
+.main-header .navbar-header {
+  min-height: 57px
+}
+
+.main-header .btn-minimize {
+  font-size: 20px;
+  line-height: 20px;
+  padding: 0;
+  background: 0 0 !important;
+  color: #575962 !important
+}
+
+.main-header .btn-minimize:focus, .main-header .btn-minimize:hover {
+  opacity: 1
+}
+
+.metric {
+  display: flex;
+  padding: 1rem;
+  flex-direction: column
+}
+
+.main-header[data-background-color] .btn-minimize {
+  color: #fff !important
+}
+
+.main-header[data-background-color] .logo-header {
+  background-color: rgba(31, 30, 30, .12) !important
+}
+
+.main-header[data-background-color] .logo-header .navbar-toggler .navbar-toggler-icon {
+  color: #fff !important
+}
+
+.main-header[data-background-color] .logo-header .more {
+  color: #fff !important
+}
+
+.main-header[data-background-color] .navbar-header .nav-search .input-group {
+  border: 0;
+  background: rgba(31, 30, 30, .12) !important;
+  box-shadow: inset 0 1px 0 0 rgba(61, 70, 79, 0);
+  transition: all .4s
+}
+
+.main-header[data-background-color] .navbar-header .nav-search .input-group .form-control {
+  color: #fff !important
+}
+
+.main-header[data-background-color] .navbar-header .nav-search .input-group .form-control::-webkit-input-placeholder {
+  opacity: 1
+}
+
+.main-header[data-background-color] .navbar-header .nav-search .input-group .form-control::-moz-placeholder {
+  opacity: 1
+}
+
+.main-header[data-background-color] .navbar-header .nav-search .input-group .form-control:-ms-input-placeholder {
+  opacity: 1
+}
+
+.main-header[data-background-color] .navbar-header .nav-search .input-group .form-control:-moz-placeholder {
+  opacity: 1
+}
+
+.main-header[data-background-color] .navbar-header .nav-search .input-group .search-icon {
+  color: #fff !important
+}
+
+.main-header[data-background-color] .navbar-header .nav-search .input-group.focus {
+  background: #fff !important
+}
+
+.main-header[data-background-color] .navbar-header .nav-search .input-group.focus .form-control {
+  color: inherit !important
+}
+
+.main-header[data-background-color] .navbar-header .nav-search .input-group.focus .form-control::-webkit-input-placeholder {
+  color: #bfbfbf !important
+}
+
+.main-header[data-background-color] .navbar-header .nav-search .input-group.focus .form-control::-moz-placeholder {
+  color: #bfbfbf !important
+}
+
+.main-header[data-background-color] .navbar-header .nav-search .input-group.focus .form-control:-ms-input-placeholder {
+  color: #bfbfbf !important
+}
+
+.main-header[data-background-color] .navbar-header .nav-search .input-group.focus .form-control:-moz-placeholder {
+  color: #bfbfbf !important
+}
+
+.main-header[data-background-color] .navbar-header .nav-search .input-group.focus .search-icon {
+  color: #bfbfbf !important
+}
+
+
+.main-header[data-background-color] .navbar-header .navbar-nav .nav-item .nav-link {
+  color: #fff !important
+}
+
+.main-header[data-background-color] .navbar-header .navbar-nav .nav-item .nav-link:focus, .main-header[data-background-color] .navbar-header .navbar-nav .nav-item .nav-link:hover {
+  background: rgba(31, 30, 30, .12) !important
+}
+
+.main-header[data-background-color] .navbar-header .navbar-nav .nav-item.active .nav-link {
+  background: rgba(31, 30, 30, .12) !important
+}
+
+.main-header[data-background-color=dark] {
+  background: #282a3c !important
+}
+
+.main-header[data-background-color=dark] .navbar-header {
+  background: #282a3c !important
+}
+
+.main-header[data-background-color=blue] {
+  background: #177dff !important
+}
+
+.main-header[data-background-color=blue] .navbar-header {
+  background: #177dff !important
+}
+
+.main-header[data-background-color=purple] {
+  background: #716aca !important
+}
+
+.main-header[data-background-color=purple] .navbar-header {
+  background: #716aca !important
+}
+
+.main-header[data-background-color=light-blue] {
+  background: #36a3f7 !important
+}
+
+.main-header[data-background-color=light-blue] .navbar-header {
+  background: #36a3f7 !important
+}
+
+.main-header[data-background-color=orange] {
+  background: #ffa534 !important
+}
+
+.main-header[data-background-color=orange] .navbar-header {
+  background: #ffa534 !important
+}
+
+.main-header[data-background-color=green] {
+  background: #35cd3a !important
+}
+
+.main-header[data-background-color=green] .navbar-header {
+  background: #35cd3a !important
+}
+
+.main-header[data-background-color=red] {
+  background: #f3545d !important
+}
+
+.main-header[data-background-color=red] .navbar-header {
+  background: #f3545d !important
+}
+
+.avatar {
+  position: relative;
+  display: inline-block
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover
+}
+
+.avatar-title {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background-color: #177dff;
+  align-items: center;
+  justify-content: center
+}
+
+.avatar-away::before, .avatar-offline::before, .avatar-online::before {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 30%;
+  height: 30%;
+  content: '';
+  border: 3px solid #fff;
+  border-radius: 50%
+}
+
+.avatar-online::before {
+  background-color: #35cd3a
+}
+
+.avatar-offline::before {
+  background-color: #b1c2d9
+}
+
+.avatar-away::before {
+  background-color: #ffa534
+}
+
+.avatar {
+  width: 3rem;
+  height: 3rem
+}
+
+.avatar .border {
+  border-width: 4px !important
+}
+
+.avatar .rounded {
+  border-radius: 6px !important
+}
+
+.avatar .avatar-title {
+  font-size: 18px
+}
+
+.avatar.avatar-away::before, .avatar.avatar-offline::before, .avatar.avatar-online::before {
+  border-width: 3px
+}
+
+.avatar-xs {
+  width: 1.625rem;
+  height: 1.625rem
+}
+
+.avatar-xs .border {
+  border-width: 2px !important
+}
+
+.avatar-xs .rounded {
+  border-radius: 4px !important
+}
+
+.avatar-xs .avatar-title {
+  font-size: 10px
+}
+
+.avatar-xs.avatar-away::before, .avatar-xs.avatar-offline::before, .avatar-xs.avatar-online::before {
+  border-width: 1px
+}
+
+.avatar-sm {
+  width: 2.5rem;
+  height: 2.5rem
+}
+
+.avatar-sm .border {
+  border-width: 3px !important
+}
+
+.avatar-sm .rounded {
+  border-radius: 4px !important
+}
+
+.avatar-sm .avatar-title {
+  font-size: 13px
+}
+
+.avatar-sm.avatar-away::before, .avatar-sm.avatar-offline::before, .avatar-sm.avatar-online::before {
+  border-width: 2px
+}
+
+.avatar-lg {
+  width: 4rem;
+  height: 4rem
+}
+
+.avatar-lg .border {
+  border-width: 3px !important
+}
+
+.avatar-lg .rounded {
+  border-radius: 8px !important
+}
+
+.avatar-lg .avatar-title {
+  font-size: 24px
+}
+
+.avatar-lg.avatar-away::before, .avatar-lg.avatar-offline::before, .avatar-lg.avatar-online::before {
+  border-width: 3px
+}
+
+.avatar-xl {
+  width: 5.125rem;
+  height: 5.125rem
+}
+
+.avatar-xl .border {
+  border-width: 4px !important
+}
+
+.avatar-xl .rounded {
+  border-radius: 8px !important
+}
+
+.avatar-xl .avatar-title {
+  font-size: 30px
+}
+
+.avatar-xl.avatar-away::before, .avatar-xl.avatar-offline::before, .avatar-xl.avatar-online::before {
+  border-width: 4px
+}
+
+.avatar-xxl {
+  width: 5.125rem;
+  height: 5.125rem
+}
+
+.avatar-xxl .border {
+  border-width: 6px !important
+}
+
+.avatar-xxl .rounded {
+  border-radius: 8px !important
+}
+
+.avatar-xxl .avatar-title {
+  font-size: 30px
+}
+
+.avatar-xxl.avatar-away::before, .avatar-xxl.avatar-offline::before, .avatar-xxl.avatar-online::before {
+  border-width: 4px
+}
+
+@media (min-width:768px) {
+  .avatar-xxl {
+    width: 8rem;
+    height: 8rem
+  }
+
+  .avatar-xxl .border {
+    border-width: 4px !important
+  }
+
+  .avatar-xxl .rounded {
+    border-radius: 12px !important
+  }
+
+  .avatar-xxl .avatar-title {
+    font-size: 42px
+  }
+
+  .avatar-xxl.avatar-away::before, .avatar-xxl.avatar-offline::before, .avatar-xxl.avatar-online::before {
+    border-width: 4px
+  }
+
+}
+
+.avatar-group {
+  display: inline-flex
+}
+
+.avatar-group .avatar+.avatar {
+  margin-left: -.75rem
+}
+
+.avatar-group .avatar-xs+.avatar-xs {
+  margin-left: -.40625rem
+}
+
+.avatar-group .avatar-sm+.avatar-sm {
+  margin-left: -.625rem
+}
+
+.avatar-group .avatar-lg+.avatar-lg {
+  margin-left: -1rem
+}
+
+.avatar-group .avatar-xl+.avatar-xl {
+  margin-left: -1.28125rem
+}
+
+.avatar-group .avatar:hover {
+  z-index: 1
+}
+
+.breadcrumbs {
+  list-style: none;
+  display: inline;
+  width: auto;
+  border-left: 1px solid #efefef;
+  margin-left: 25px;
+  padding-left: 25px;
+  margin-bottom: 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: 100%
+}
+
+.breadcrumbs li {
+  display: inline-block
+}
+
+.breadcrumbs li a {
+  color: #575962;
+  font-size: 12px
+}
+
+.breadcrumbs li a i {
+  font-size: 16px
+}
+
+.breadcrumbs li a:hover {
+  text-decoration: none
+}
+
+.breadcrumbs li.separator {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 12px
+}
+
+.navbar .navbar-nav .nav-item {
+  margin-right: 7px
+}
+
+.navbar .navbar-nav .nav-item:last-child {
+  margin-right: 0
+}
+
+.navbar .navbar-nav .nav-item .nav-link {
+  display: inline-block;
+  vertical-align: middle;
+  color: #666;
+  letter-spacing: .04em;
+  padding: 10px;
+  border-radius: 3px;
+  position: relative;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: center
+}
+
+.navbar .navbar-nav .nav-item .nav-link:focus, .navbar .navbar-nav .nav-item .nav-link:hover {
+  background: #eee !important
+}
+
+.navbar .navbar-nav .nav-item .nav-link i {
+  font-size: 18px;
+  vertical-align: middle;
+  line-height: 1 !important
+}
+
+.navbar .navbar-nav .nav-item.active .nav-link {
+  background: #eee !important
+}
+
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+  left: auto;
+  right: 0
+}
+
+.dropdown-item {
+  font-size: 13px
+}
+
+.navbar .navbar-nav .notification {
+  position: absolute;
+  background-color: #f3545d;
+  text-align: center;
+  border-radius: 10px;
+  min-width: 17px;
+  height: 17px;
+  font-size: 10px;
+  color: #fff;
+  font-weight: 300;
+  line-height: 17px;
+  top: 3px;
+  right: 3px;
+  letter-spacing: -1px
+}
+
+.navbar-header {
+  padding: 0 15px
+}
+
+.navbar-header .dropdown-toggle::after {
+  margin-left: 0
+}
+
+.profile-pic:focus, .profile-pic:hover {
+  text-decoration: none
+}
+
+.navbar-header .dropdown-toggle::after {
+  vertical-align: middle;
+  color: #555
+}
+
+.hidden-caret .dropdown-toggle::after {
+  display: none !important
+}
+
+.profile-pic span {
+  font-size: 13px;
+  font-weight: 300;
+  padding: 0 10px;
+  color: #555
+}
+
+.navbar.bg-danger, .navbar.bg-dark, .navbar.bg-default, .navbar.bg-info, .navbar.bg-primary, .navbar.bg-secondary, .navbar.bg-success, .navbar.bg-warning {
+  border-bottom: 1px solid rgba(255, 255, 255, .2) !important;
+  border-left: 1px solid rgba(255, 255, 255, .1) !important
+}
+
+.navbar.bg-danger .navbar-brand, .navbar.bg-dark .navbar-brand, .navbar.bg-default .navbar-brand, .navbar.bg-info .navbar-brand, .navbar.bg-primary .navbar-brand, .navbar.bg-secondary .navbar-brand, .navbar.bg-success .navbar-brand, .navbar.bg-warning .navbar-brand {
+  color: #fff
+}
+
+.navbar.bg-danger .navbar-toggler-icon, .navbar.bg-dark .navbar-toggler-icon, .navbar.bg-default .navbar-toggler-icon, .navbar.bg-info .navbar-toggler-icon, .navbar.bg-primary .navbar-toggler-icon, .navbar.bg-secondary .navbar-toggler-icon, .navbar.bg-success .navbar-toggler-icon, .navbar.bg-warning .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox=!string!xmlns=!string!%3E%3Cpath stroke=!string!stroke-width=!string!stroke-linecap=!string!stroke-miterlimit=!string!d=!string!/%3E%3C/svg%3E")
+}
+
+.navbar.bg-danger .navbar-nav>.nav-item>.nav-link, .navbar.bg-dark .navbar-nav>.nav-item>.nav-link, .navbar.bg-default .navbar-nav>.nav-item>.nav-link, .navbar.bg-info .navbar-nav>.nav-item>.nav-link, .navbar.bg-primary .navbar-nav>.nav-item>.nav-link, .navbar.bg-secondary .navbar-nav>.nav-item>.nav-link, .navbar.bg-success .navbar-nav>.nav-item>.nav-link, .navbar.bg-warning .navbar-nav>.nav-item>.nav-link {
+  color: #fff
+}
+
+.navbar.bg-danger .navbar-nav>.nav-item>.nav-link.disabled, .navbar.bg-dark .navbar-nav>.nav-item>.nav-link.disabled, .navbar.bg-default .navbar-nav>.nav-item>.nav-link.disabled, .navbar.bg-info .navbar-nav>.nav-item>.nav-link.disabled, .navbar.bg-primary .navbar-nav>.nav-item>.nav-link.disabled, .navbar.bg-secondary .navbar-nav>.nav-item>.nav-link.disabled, .navbar.bg-success .navbar-nav>.nav-item>.nav-link.disabled, .navbar.bg-warning .navbar-nav>.nav-item>.nav-link.disabled {
+  color: #d8d8d8 !important
+}
+
+.navbar.bg-danger .navbar-nav>.nav-item>.nav-link:hover, .navbar.bg-dark .navbar-nav>.nav-item>.nav-link:hover, .navbar.bg-default .navbar-nav>.nav-item>.nav-link:hover, .navbar.bg-info .navbar-nav>.nav-item>.nav-link:hover, .navbar.bg-primary .navbar-nav>.nav-item>.nav-link:hover, .navbar.bg-secondary .navbar-nav>.nav-item>.nav-link:hover, .navbar.bg-success .navbar-nav>.nav-item>.nav-link:hover, .navbar.bg-warning .navbar-nav>.nav-item>.nav-link:hover {
+  background: rgba(255, 255, 255, .22) !important
+}
+
+.navbar.bg-danger .navbar-nav>.nav-item.active>.nav-link, .navbar.bg-dark .navbar-nav>.nav-item.active>.nav-link, .navbar.bg-default .navbar-nav>.nav-item.active>.nav-link, .navbar.bg-info .navbar-nav>.nav-item.active>.nav-link, .navbar.bg-primary .navbar-nav>.nav-item.active>.nav-link, .navbar.bg-secondary .navbar-nav>.nav-item.active>.nav-link, .navbar.bg-success .navbar-nav>.nav-item.active>.nav-link, .navbar.bg-warning .navbar-nav>.nav-item.active>.nav-link {
+  background: rgba(255, 255, 255, .22) !important
+}
+
+.navbar.bg-danger .btn-minimize, .navbar.bg-dark .btn-minimize, .navbar.bg-default .btn-minimize, .navbar.bg-info .btn-minimize, .navbar.bg-primary .btn-minimize, .navbar.bg-secondary .btn-minimize, .navbar.bg-success .btn-minimize, .navbar.bg-warning .btn-minimize {
+  background: rgba(19, 19, 19, .25) !important;
+  color: #fff !important
+}
+
+.navbar.bg-danger .nav-search .input-group, .navbar.bg-dark .nav-search .input-group, .navbar.bg-default .nav-search .input-group, .navbar.bg-info .nav-search .input-group, .navbar.bg-primary .nav-search .input-group, .navbar.bg-secondary .nav-search .input-group, .navbar.bg-success .nav-search .input-group, .navbar.bg-warning .nav-search .input-group {
+  border: 0;
+  background: rgba(19, 19, 19, .25) !important
+}
+
+.navbar.bg-danger .nav-search .input-group .form-control, .navbar.bg-dark .nav-search .input-group .form-control, .navbar.bg-default .nav-search .input-group .form-control, .navbar.bg-info .nav-search .input-group .form-control, .navbar.bg-primary .nav-search .input-group .form-control, .navbar.bg-secondary .nav-search .input-group .form-control, .navbar.bg-success .nav-search .input-group .form-control, .navbar.bg-warning .nav-search .input-group .form-control {
+  color: #fff !important
+}
+
+.navbar.bg-danger .nav-search .search-icon, .navbar.bg-dark .nav-search .search-icon, .navbar.bg-default .nav-search .search-icon, .navbar.bg-info .nav-search .search-icon, .navbar.bg-primary .nav-search .search-icon, .navbar.bg-secondary .nav-search .search-icon, .navbar.bg-success .nav-search .search-icon, .navbar.bg-warning .nav-search .search-icon {
+  color: #fff !important
+}
+
+
+.user-box {
+  display: flex;
+  padding: .25rem 1rem;
+  width: max-content;
+}
+
+.user-box .u-text {
+  padding: 0 10px
+}
+
+.user-box .u-text h4 {
+  margin-bottom: 5px;
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1
+}
+
+.user-box .u-text .text-muted {
+  font-size: 12px;
+  margin-bottom: 5px
+}
+
+.user-box .u-text .btn {
+  font-size: 11px
+}
+
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: .255em;
+  vertical-align: .255em;
+  content: '0 0 30 30';
+  border-top: .3em solid;
+  border-right: .3em solid transparent;
+  border-bottom: 0;
+  border-left: .3em solid transparent
+}
